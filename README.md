@@ -1,7 +1,8 @@
 # schemaless_clean
 ubuntu/linux scripts for cleaning schemaless 
 
-Warning user discretion is strongly recommended. Use will clear all producation data.
+Warning user discretion is strongly recommended. 
+Usage will clear all production database.
 
 Usage:
 ```
