@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "clearling jogchat0..."
+echo "clearling jogchat1..."
 
 mysql -u root -pUmiuni_jogchat_schemales_2018@ -h 138.197.103.33 <<MY_QUERY
 USE jogchat1
