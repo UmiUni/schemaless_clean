@@ -6,6 +6,6 @@ Usage will clear all production database.
 
 Usage:
 ```
-sh clear_db0.sh
-sh clear_db1.sh
+clear_and_create_db0_certain_tables.sh
+clear_and_create_db1_certain_tables.sh
 ```
