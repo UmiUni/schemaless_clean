@@ -22,7 +22,7 @@ CREATE TABLE cell
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_users_id(
-    id BINARY(16) NOT NULL,
+    id VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB; 
@@ -59,7 +59,7 @@ CREATE TABLE index_users_token(
 
 
 CREATE TABLE index_companies_id(
-    id BINARY(16) NOT NULL,
+    id VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
@@ -84,7 +84,7 @@ CREATE TABLE index_companies_name(
 
 
 CREATE TABLE index_schools_id(
-    id BINARY(16) NOT NULL,
+    id VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
@@ -107,9 +107,8 @@ CREATE TABLE index_schools_name(
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
 
-
 CREATE TABLE index_news_id(
-    id BINARY(16) NOT NULL, 
+    id VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE, 
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
