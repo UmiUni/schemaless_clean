@@ -10,7 +10,6 @@ DELETE from index_users_id;
 DELETE from index_users_username;
 DELETE from index_users_email;
 DELETE from index_users_phone;
-DELETE from index_users_password;
 DELETE from index_users_activate;
 DELETE from index_users_token;
 
