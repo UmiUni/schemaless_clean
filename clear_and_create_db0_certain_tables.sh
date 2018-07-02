@@ -2,7 +2,7 @@
 
 echo "clearling jogchat0..."
 
-mysql -u root -pUmiuni_jogchat_schemales_2018@ -h 165.227.25.43 <<MY_QUERY
+mysql -u root -pUmiuni_jogchat_schemales_2018@ -h 138.197.103.33 <<MY_QUERY
 
 DROP DATABASE if exists jogchat0;
 
@@ -20,7 +20,6 @@ CREATE TABLE cell
     created_at       DATETIME DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT cell_idx UNIQUE(row_key, column_name,ref_key)
 ) ENGINE=InnoDB;
-
 
 CREATE TABLE index_users_id(
     id VARCHAR(36) NOT NULL,
@@ -82,6 +81,7 @@ CREATE TABLE index_companies_name(
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
+
 
 CREATE TABLE index_schools_id(
     id VARCHAR(36) NOT NULL,
@@ -149,6 +149,18 @@ CREATE TABLE index_comment_newsId(
     PRIMARY KEY (newsId, row_key)
 ) ENGINE=InnoDB;
 
+CREATE TABLE index_comment_userId(
+    userId VARCHAR(36) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (userId, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_parentId(
+    parentId VARCHAR(36) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (parentId, row_key)
+) ENGINE=InnoDB;
+
 CREATE TABLE index_comment_content(
     content VARCHAR(300) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE, 
@@ -161,11 +173,6 @@ CREATE TABLE index_comment_timestamp(
     PRIMARY KEY (timestamp, row_key)
 ) ENGINE=InnoDB;
 
-CREATE TABLE index_comment_parentCommentId(
-    parentCommentId BIGINT NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (parentCommentId, row_key)
-) ENGINE=InnoDB;
 MY_QUERY
 
-echo "create jogchat0 serveral index tables done"
+echo "create jogchat1 serveral index tables done"
