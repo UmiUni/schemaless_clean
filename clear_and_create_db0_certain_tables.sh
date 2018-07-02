@@ -2,7 +2,7 @@
 
 echo "clearling jogchat0..."
 
-mysql -u root -pUmiuni_jogchat_schemales_2018@ -h 138.197.103.33 <<MY_QUERY
+mysql -u root -pUmiuni_jogchat_schemales_2018@ -h 165.227.25.43 <<MY_QUERY
 
 DROP DATABASE if exists jogchat0;
 
