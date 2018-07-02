@@ -136,6 +136,36 @@ CREATE TABLE index_news_title(
     row_key BINARY(16) NOT NULL UNIQUE, 
     PRIMARY KEY (title, row_key)
 ) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_id(
+    id VARCHAR(36) NOT NULL, 
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (id, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_newsId(
+    newsId BINARY(16) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (newsId, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_content(
+    content VARCHAR(300) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (content, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_timestamp(
+    timestamp BIGINT NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (timestamp, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_parentCommentId(
+    parentCommentId BIGINT NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE, 
+    PRIMARY KEY (parentCommentId, row_key)
+) ENGINE=InnoDB;
 MY_QUERY
 
 echo "create jogchat0 serveral index tables done"
