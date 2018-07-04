@@ -57,17 +57,16 @@ CREATE TABLE index_users_token(
     PRIMARY KEY (token, row_key)
 ) ENGINE=InnoDB;
 
+CREATE TABLE index_users_category(
+    category VARCHAR(16) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (token, row_key)
+) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_id(
     id VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_companies_category(
-    category VARCHAR(255) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE,
-    PRIMARY KEY (category, row_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_domain(
@@ -82,17 +81,10 @@ CREATE TABLE index_companies_name(
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
 
-
 CREATE TABLE index_schools_id(
     id VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_schools_category(
-    category VARCHAR(255) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE,
-    PRIMARY KEY (category, row_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_schools_domain(
@@ -105,72 +97,6 @@ CREATE TABLE index_schools_name(
     name VARCHAR(255) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (name, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_news_id(
-    id VARCHAR(36) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (id, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_news_domain(
-    domain VARCHAR(63) NOT NULL, 
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (domain, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_news_timestamp(
-    timestamp BIGINT NOT NULL, 
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (timestamp, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_news_author(
-    author VARCHAR(255) NOT NULL, 
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (author, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_news_title(
-    title VARCHAR(1024) NOT NULL, 
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (title, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_comment_id(
-    id VARCHAR(36) NOT NULL, 
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (id, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_comment_newsId(
-    newsId VARCHAR(36) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (newsId, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_comment_userId(
-    userId VARCHAR(36) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (userId, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_comment_parentId(
-    parentId VARCHAR(36) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (parentId, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_comment_content(
-    content VARCHAR(300) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (content, row_key)
-) ENGINE=InnoDB;
-
-CREATE TABLE index_comment_timestamp(
-    timestamp BIGINT NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE, 
-    PRIMARY KEY (timestamp, row_key)
 ) ENGINE=InnoDB;
 
 MY_QUERY
