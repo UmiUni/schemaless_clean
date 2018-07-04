@@ -60,7 +60,7 @@ CREATE TABLE index_users_token(
 CREATE TABLE index_users_category(
     category VARCHAR(16) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
-    PRIMARY KEY (token, row_key)
+    PRIMARY KEY (category, row_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_id(
