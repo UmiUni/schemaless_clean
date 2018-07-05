@@ -51,12 +51,6 @@ CREATE TABLE index_users_activate(
     PRIMARY KEY (activate, row_key)
 ) ENGINE=InnoDB;
 
-CREATE TABLE index_users_token(
-    token BINARY(60) NOT NULL,
-    row_key BINARY(16) NOT NULL UNIQUE,
-    PRIMARY KEY (token, row_key)
-) ENGINE=InnoDB;
-
 CREATE TABLE index_users_category(
     category VARCHAR(16) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
