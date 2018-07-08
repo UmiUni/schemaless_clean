@@ -22,19 +22,19 @@ CREATE TABLE cell
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_users_id(
-    id VARCHAR(36) NOT NULL,
+    id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB; 
 
 CREATE TABLE index_users_username(
-    username VARCHAR(20) NOT NULL,
+    username VARCHAR(20) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (username, row_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_users_email(
-    email VARCHAR(254) NOT NULL,
+    email VARCHAR(254) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (email, row_key)
 ) ENGINE=InnoDB;
@@ -70,7 +70,7 @@ CREATE TABLE index_users_resume(
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_id(
-    id VARCHAR(36) NOT NULL,
+    id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
@@ -82,13 +82,13 @@ CREATE TABLE index_companies_domain(
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_name(
-    name VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_schools_id(
-    id VARCHAR(36) NOT NULL,
+    id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
@@ -100,7 +100,7 @@ CREATE TABLE index_schools_domain(
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_schools_name(
-    name VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
