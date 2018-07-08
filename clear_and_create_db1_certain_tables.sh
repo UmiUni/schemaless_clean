@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "clearling jogchat1..."
+echo "clearing jogchat1..."
 
 mysql -u root -pUmiuni_jogchat_schemales_2018@ -h 138.197.103.33 <<MY_QUERY
 
@@ -49,6 +49,24 @@ CREATE TABLE index_users_activate(
     activate BOOLEAN NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (activate, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_users_applicant(
+    applicant BOOLEAN NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (applicant, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_users_referrer(
+    referrer BOOLEAN NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (referrer, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_users_resume(
+    resume VARCHAR(63) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (resume, row_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_id(
