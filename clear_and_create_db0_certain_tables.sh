@@ -135,6 +135,12 @@ CREATE TABLE index_comment_id(
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
 
+CREATE TABLE index_comment_username(
+    username VARCHAR(20) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (username, row_key)
+) ENGINE=InnoDB;
+
 CREATE TABLE index_comment_positionId(
     positionId VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
