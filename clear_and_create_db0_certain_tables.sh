@@ -141,6 +141,12 @@ CREATE TABLE index_comment_positionId(
     PRIMARY KEY (positionId, row_key)
 ) ENGINE=InnoDB;
 
+CREATE TABLE index_comment_parentId(
+    parentId VARCHAR(36) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (parentId, row_key)
+) ENGINE=InnoDB;
+
 MY_QUERY
 
 echo "create jogchat0 serveral index tables done"
