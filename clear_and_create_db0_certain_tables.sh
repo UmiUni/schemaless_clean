@@ -82,7 +82,7 @@ CREATE TABLE index_companies_domain(
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_companies_name(
-    name VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(64) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
@@ -100,9 +100,45 @@ CREATE TABLE index_schools_domain(
 ) ENGINE=InnoDB;
 
 CREATE TABLE index_schools_name(
-    name VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(64) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (name, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_position_id(
+    id VARCHAR(36) NOT NULL UNIQUE,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (id, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_position_postedBy(
+    postedBy VARCHAR(36) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (postedBy, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_position_position(
+    position VARCHAR(64) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (position, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_position_company(
+    company VARCHAR(255) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (company, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_id(
+    id VARCHAR(36) NOT NULL UNIQUE,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (id, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_comment_positionId(
+    positionId VARCHAR(36) NOT NULL,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (positionId, row_key)
 ) ENGINE=InnoDB;
 
 MY_QUERY
