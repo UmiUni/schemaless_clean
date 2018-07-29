@@ -9,8 +9,9 @@ Usage:
 clear_and_create_db0_certain_tables.sh
 clear_and_create_db1_certain_tables.sh
 ```
-after running clearing script,
-also need to run company/school add script:
-s&p500 will take 5mins
-schools will roughtly take 33mins:
+After running clearing script (clear all databases for testing purpose),
+also need to run company/school backfill script:
+
+Companies(S&P500) backfill will take 5mins
+Schools(Universities) backfill will roughtly take 33mins
 https://github.com/Jogchat/school_company_csv_to_schemaless
