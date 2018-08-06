@@ -105,25 +105,31 @@ CREATE TABLE index_schools_name(
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
 
-CREATE TABLE index_position_id(
+CREATE TABLE index_positions_id(
     id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (id, row_key)
 ) ENGINE=InnoDB;
 
-CREATE TABLE index_position_postedBy(
+CREATE TABLE index_positions_postedAt(
+    postedAt BIGINT,
+    row_key BINARY(16) NOT NULL UNIQUE,
+    PRIMARY KEY (postedAt, row_key)
+) ENGINE=InnoDB;
+
+CREATE TABLE index_positions_postedBy(
     postedBy VARCHAR(36) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (postedBy, row_key)
 ) ENGINE=InnoDB;
 
-CREATE TABLE index_position_position(
+CREATE TABLE index_positions_position(
     position VARCHAR(64) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (position, row_key)
 ) ENGINE=InnoDB;
 
-CREATE TABLE index_position_company(
+CREATE TABLE index_positions_company(
     company VARCHAR(255) NOT NULL,
     row_key BINARY(16) NOT NULL UNIQUE,
     PRIMARY KEY (company, row_key)
