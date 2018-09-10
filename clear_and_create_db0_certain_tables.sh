@@ -21,6 +21,7 @@ CREATE TABLE cell
     CONSTRAINT cell_idx UNIQUE(row_key, column_name,ref_key)
 ) ENGINE=InnoDB;
 
+# users table
 CREATE TABLE index_users_id(
     id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
@@ -69,6 +70,7 @@ CREATE TABLE index_users_resume(
     PRIMARY KEY (resume, row_key)
 ) ENGINE=InnoDB;
 
+# company table
 CREATE TABLE index_companies_id(
     id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
@@ -87,6 +89,7 @@ CREATE TABLE index_companies_name(
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
 
+# school table
 CREATE TABLE index_schools_id(
     id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
@@ -105,6 +108,7 @@ CREATE TABLE index_schools_name(
     PRIMARY KEY (name, row_key)
 ) ENGINE=InnoDB;
 
+# position table
 CREATE TABLE index_positions_id(
     id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
@@ -135,6 +139,7 @@ CREATE TABLE index_positions_company(
     PRIMARY KEY (company, row_key)
 ) ENGINE=InnoDB;
 
+# commnet table
 CREATE TABLE index_comment_id(
     id VARCHAR(36) NOT NULL UNIQUE,
     row_key BINARY(16) NOT NULL UNIQUE,
